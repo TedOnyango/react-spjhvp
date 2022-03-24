@@ -9,12 +9,12 @@ const Nasa = () =>{
     const url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=" + API_KEY
     fetch(url)
       .then((response) => response.json())
-      .then((json) => setData({...json}))
+      .then((json) => setData(json['photos']))
       .catch((error) => console.log(error));
   }, []);
   console.log(data)
-  let it = data[0]
-  console.log(it)
+  let it = {...data[0]}
+  console.log(it.camera)
 
 
 

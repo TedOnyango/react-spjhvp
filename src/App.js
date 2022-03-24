@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <div>
-      <h1 className="text-center">Hello Boy!</h1>
+      <h1 className="text-center">Explore Nasa</h1>
       <div className="text-center">
         { count }
       </div>
