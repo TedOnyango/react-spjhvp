@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Button } from 'react-bootstrap';
+
 
 const Nasa = () =>{
   const [isLoading, setIsLoading] = useState(true);
@@ -14,9 +17,8 @@ const Nasa = () =>{
   }, []);
   console.log(data)
   let it = {...data[0]}
-  console.log(it.camera)
-
-
+  let camera = {...it['camera']}
+  console.log(camera)
 
   return (
     <div>
@@ -27,9 +29,19 @@ const Nasa = () =>{
         <img src={dat.img_src}/>
         </div>
       ))} */}
-     <div>{
-       
-       }</div>
+     <div>
+     <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={it.img_src} />
+  <Card.Body>
+    <Card.Title>{camera.full_name} | {it.earth_date}</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+</Card>
+       </div>
 
     </div>
   );
