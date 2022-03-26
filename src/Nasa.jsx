@@ -16,31 +16,31 @@ const Nasa = () =>{
       .catch((error) => console.log(error));
   }, []);
   console.log(data)
-  let it = {...data[0]}
+  let it = {...data}
   let camera = {...it['camera']}
-  console.log(camera)
+  console.log(it)
 
   return (
     <div>
      
       <h2>This is Nasa</h2>
-      {/* {data.map(dat => (
+      {data.map(dat => (
       <div>
-        <img src={dat.img_src}/>
-        </div>
-      ))} */}
-     <div>
-     <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={it.img_src} />
+ <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={dat.img_src} />
   <Card.Body>
-    <Card.Title>{camera.full_name} | {it.earth_date}</Card.Title>
+    <Card.Title>{dat.camera.full_name} | {dat.earth_date} | {dat.rover.name}
+    </Card.Title>
     <Card.Text>
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
     </Card.Text>
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
-</Card>
+</Card>        </div>
+      ))}
+     <div>
+    
        </div>
 
     </div>
